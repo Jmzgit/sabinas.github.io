@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="contact form example">
+  <title>Contact Form </title>
+</head>
+
+<style>
+.ohnohoney{
+     opacity: 0;
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 0;
+     width: 0;
+     z-index: -1;
+}
+</style>
+
+<body>
+  <h2 style="text-align:center">Contact Us!</h2>
+  <aside>
+       <p>
+           We would <em>love</em> to hear from you! </p>
+           <p>Please use the <b><em>Contact Form</em></b>
+           to send us a message.
+       </p>
+   </aside>
+
+<!-- START HERE -->
+   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+   <!-- Style The Contact Form How Ever You Prefer -->
+   <link rel="stylesheet" href="style.css">
+
+
+
+<form id="myformid" action="/myformaction">
+    <!-- Real fields -->
+    <label for="nameaksljf">Your Name</label>
+    <input type="text" id="nameksljf" name="nameksljf" placeholder="Your name here" required maxlength="100">
+    <label for="emaillkjkl">Your E-mail</label>
+    <input type="text" id="emaillkjkl" name="emaillkjkl" placeholder="Your e-mail here" required>
+    <!-- H o n e y p o t -->
+    <label class="ohnohoney" for="name"></label>
+    <input class="ohnohoney" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here">
+    <label class="ohnohoney" for="email"></label>
+    <input class="ohnohoney" autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here">
+</form>
+
+
+</body>
+</html>

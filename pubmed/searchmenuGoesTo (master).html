@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- adapt screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    {
+      box-sizing: border-box;
+    }
+
+        body {
+          /* format of search box */
+          border: 0px solid 	grey; /* border to know where we are */
+          padding: 0%; /* padding from border to font  */
+          font-size: 120%;
+          background-color: #EEE8AA;  /* background color using also in hover list  */
+          text-align: center;
+          color: black;
+          font-family: Verdana, Helvetica, sans-serif;
+        }
+
+
+        #mySearch {
+            width: 40%; /* width of search box */
+            font-size: 100%;/* font size in seach box */
+            padding: 5px; /* width of padding from font of searchBox*/
+            border: 0px solid #ddd; /* border searchBox*/
+            text-align: left;
+        }
+
+        /* funxction Style of list inside the left column */
+        #myMenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myMenu li a {
+            padding: 1px; /* paragraph spacing from result list */
+            font-size: 80%; /* font size of results */
+            text-decoration: none;
+            color: black;
+            display: block; /* once hover list fires inline or block sinde this is not flex box  */
+        }
+
+        #myMenu li a:hover:not(.header) {
+          background-color: #EEE8AA ;    /* background color using also in hover list  */
+          color: red; /* font color once hovered */
+        }
+
+    </style>
+</head>
+
+<body>
+<br>
+            <form >
+            <p style="color:#34495E;"></p>  <!-- changed paragraph font color -->
+            <input type="text"  id="mySearch" onkeyup="myFunction()" placeholder="Search..." title="Type in a category" autofocus><br>
+            <ul id="myMenu">
+                <li><a href="http://www.google.com">Google</a></li>
+                <li><a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi">Pubmed</a></li>
+                <li><a href="https://www.sleephealthjournal.org/">SleepMagazine</a></li>
+                <li><a href="https://www.pornhub.com/">Porno</a></li>
+                <li><a href="http://www.espn.com/">Deportes</a></li>
+
+            </ul>
+          </form>
+  <br><br>
+            <script>
+                var UL = document.getElementById("myMenu");
+                // hide the list by default
+                UL.style.display = "none";
+                var searchBox = document.getElementById("mySearch");
+
+                // show the list when the input receive focus
+                searchBox.addEventListener("focus", function() {
+                    // UL.style.display = "block";
+                });
+
+
+
+                function myFunction() {
+
+                    var input, filter, ul, li, a, i;
+                    input = document.getElementById("mySearch");
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("myMenu");
+                    // if the input is empty hide the list
+                    if (filter.trim().length < 1) {
+                        ul.style.display = "none";
+                        return false;
+                    } else {
+                        ul.style.display = "block";
+                    }
+                    // something
+                    li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        // This is when you want to find words that contain the search string
+                        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                    }
+                };
+
+
+
+                // Mouse and keyboard shortcut block
+                window.onload = function() {
+                    document.addEventListener("contextmenu", function(e) {
+                        e.preventDefault();
+                    }, false);
+                    document.addEventListener("keydown", function(e) {
+                        //document.onkeydown = function(e) {
+                        // "I" key
+                        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                            disabledEvent(e);
+                        }
+                        // "J" key
+                        if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                            disabledEvent(e);
+                        }
+                        // "S" key + macOS
+                        if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                            disabledEvent(e);
+                        }
+                        // "U" key
+                        if (e.ctrlKey && e.keyCode == 85) {
+                            disabledEvent(e);
+                        }
+                        // "F12" key
+                        if (event.keyCode == 123) {
+                            disabledEvent(e);
+                        }
+                    }, false);
+
+                    function disabledEvent(e) {
+                        if (e.stopPropagation) {
+                            e.stopPropagation();
+                        } else if (window.event) {
+                            window.event.cancelBubble = true;
+                        }
+                        e.preventDefault();
+                        return false;
+                    }
+                };
+
+            </script>
+
+</body>
+
+</html>

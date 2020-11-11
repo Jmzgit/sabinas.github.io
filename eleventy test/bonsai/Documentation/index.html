@@ -1,0 +1,451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<head lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Bobosai : Multi Page HTML Template </title>
+    <!-- Framework CSS -->
+    <link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="assets/scripts/jquery.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-ui.custom.min.js"></script>
+
+    <script type="text/javascript" src="assets/scripts/shCore.js"></script>
+    <script type="text/javascript" src="assets/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="assets/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="assets/scripts/shBrushPhp.js"></script>
+    <script type="text/javascript" src="assets/scripts/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="assets/blueprint-css/shCoreDefault.css" />
+
+    <!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                // Cache selectors
+                var lastId,
+                    topMenu = $(".menu .alpha"),
+                    topMenuHeight = topMenu.outerHeight() + 15,
+                    // All list items
+                    menuItems = topMenu.find("a"),
+                    canUpdateURL = typeof history.pushState === "function" ? true : false,
+                    // Anchors corresponding to menu items
+                    scrollItems = menuItems.map(function () {
+                        var item = $($(this).attr("href"));
+                        if (item.length) {
+                            return item;
+                        }
+                    });
+
+                // Bind click handler to menu items
+                // so we can get a fancy scroll animation
+                menuItems.click(function (e) {
+                    var href = $(this).attr("href"),
+                        offsetTop = $(href).offset().top - topMenuHeight + 1;
+
+                    $('html, body').stop().animate({
+                        scrollTop: offsetTop
+                    }, 300);
+                    e.preventDefault();
+                });
+
+                // Bind to scroll
+                $(window).scroll(function () {
+                    // Get container scroll position
+                    var fromTop = $(this).scrollTop() + topMenuHeight;
+
+                    // Get id of current scroll item
+                    var cur = scrollItems.map(function () {
+                        if ($(this).offset().top < fromTop)
+                            return this;
+                    });
+                    // Get the id of the current element
+                    cur = cur[cur.length - 1];
+                    var id = cur && cur.length ? cur[0].id : "";
+
+                    if (lastId !== id) {
+                        lastId = id;
+                        // Set/remove active class
+                        menuItems
+                            .parents('li').removeClass("active").end()
+                            .filter("[href=#" + id + "]").parent('li').addClass("active")
+                            .parents('li').addClass('active');
+
+                        if (canUpdateURL) {
+                            history.pushState(null, null, window.location.href.split('#').shift() + '#' + id);
+                        } else {
+                            var $section = $('#' + id);
+
+                            $section.attr('id', '');
+                            window.location.hash = '#' + id;
+                            $section.attr('id', id);
+                        }
+                    }
+                });
+
+                hashname = window.location.hash.replace('#', '');
+
+                $('.menu li').removeClass('active');
+                $('.menu li a[href=#' + hashname + ']')
+                    .parent('li').addClass('active')
+                    .parents('li').addClass('active');
+
+                elem = $('#' + hashname);
+
+                if (hashname.length > 1) {
+                    $('body, html').animate({
+                        scrollTop: $(elem).offset().top - topMenuHeight - 315
+                    }, 500, 'easeInOutCubic');
+                };
+            })
+        })(jQuery);
+    </script>
+</head>
+
+
+<body>
+    <div class="docs-header-bg">
+        <div class="overlay">
+            <div class="docs-header">
+
+                <div class="logo">
+                    <img src="assets/images/logo.jpg" alt="Bonosai logo">
+                </div>
+
+                <h1 class="center">Bonosai Documentation</h1>
+
+                <p>A Complete Guide of Bonosai Multi Page HTML Template - Document Version 1.0</p>
+                <div>
+                    <a href="#" target="_blank" class="header-button">Support</a>
+                    <a href="#" target="_blank" class="header-button">Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="menu">
+            <ol class="alpha">
+                <li><a href="#information">General Info</a>
+                    <ol>
+                        <li><a href="#folder-struc">Folder Structure</a>
+                        </li>
+                    </ol>
+                </li>
+                <li><a href="#how-to">How To?</a>
+                    <ol>
+                        <li><a href="#slider">Slider</a></li>
+                        <li><a href="#tab">Tab</a></li>
+                        <li><a href="#before">before/after Tab</a></li>
+                        <li><a href="#project">Owl Function Edit</a></li>
+                        <li><a href="#filter">Isotop Filter</a></li>
+                        <li><a href="#map">Map Setting</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+
+        <h3 id="information"><strong>General Informations</strong></h3>
+
+        <p>First of all, we want to say <strong>thanks you!</strong> We are very grateful that you have chosen our template for your website. We will do everything we can to provide you the best support possible. Feel free asking us if you need more help.</p>
+
+        <p>This document covers the Bonosai structure, set up, and use of this template and provides answers and solutions to common problems and issues - we encourage you to read this document thoroughly if you are experiencing any difficulties. If you have any questions that are beyond the scope of this document, feel free to ask support. (<a href="http://themeforest.net/user/VictorThemes#contact" target="_blank">Support</a>)</p>
+
+
+        <hr>
+
+        <div class="subitems">
+
+            <h5 id="folder-struc"><strong>Folder Structure</strong></h5>
+            <ul class="folder-struc">
+                <li class="file folder">Documentation</li>
+                <li class="file folder">Bonosai-html</li>
+            </ul>
+
+            <ul class="folder-struc margin-left">
+                <li class="file folder">assets
+					<ul>
+                        <li class="file folder">css</li>
+						<li class="file folder">Images</li>
+						<li class="file folder">fonts</li>
+						<li class="file folder">js</li>
+					</ul>
+				</li>
+                <li class="file folder">images</li>
+                <li class="file page">404.html</li>
+                <li class="file page">404-2.html</li>
+                <li class="file page">about-us.html</li>
+                <li class="file page">construction.html</li>
+                <li class="file page">contact.html</li>
+                <li class="file page">grid-portfolio.html</li>
+                <li class="file page">index.html</li>
+                <li class="file page">index-2.html</li>
+                <li class="file page">index-3.html</li>
+                <li class="file page">index-4.html</li>
+                <li class="file page">news.html</li>
+                <li class="file page">news-details.html</li>
+                <li class="file page">project-details.html</li>
+                <li class="file page">service.html</li>
+                <li class="file page">service-details-1.html</li>
+                <li class="file page">service-details-2.html</li>
+            </ul>
+
+            <hr>
+
+            <!--      Section       -->
+
+            <h3 id="how-to"><strong>How To?</strong></h3>
+
+
+			<h6 id="slider">How to Change Slider Content?</h6>
+            <p>In html file you see This Code And Chage Only Text.</p>
+            <ul class="folder-struc">
+                <li class="file page">index.html</li>
+            </ul>
+           
+<pre class="code-box">
+&lt;div class="item"&gt;
+    &lt;div class="slider-content text-center"&gt;
+        &lt;div class="slider-img"&gt;
+            &lt;img src="images/slider/01.jpg" alt="slider image"&gt;
+            &lt;div class="img-text-box">
+                &lt;h2&gt;&lt;span>Crowing&lt;/span>&lt;/h2&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="slider-text"&gt;
+            &lt;h1 class="text-capitalize">Bonsai&lt;/h1&gt;
+            &lt;h3 class="text-lowercase">professional service&lt;/h3&gt;
+            &lt;p class="mm-width">Lorem Ipsum is simply dummy text the printing and typesetting any industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.&lt;/p&gt;
+        &lt;/div&gt;<!-- /.slider-text -->
+    &lt;/div&gt;<!-- /.slider-content -->
+&lt;/div&gt;		
+</pre>
+<hr />
+
+<h6 id="tab">How to change Tab Content?</h6>
+<p>In js folder you can see custom.js there you can edit brand News id & icon.</p>
+<p>You can change any owl carousel slider same way in Bonosai.</p>
+<br>
+
+<pre class="code-box">
+&lt;div class="col-sm-4"&gt;
+    &lt;div class="colmd4"&gt;
+        &lt;div class="product-tab-img"&gt;
+            &lt;img src="images/home-2/tab-product/1.jpg" class="img-responsive" alt="Tab Product Image"&gt;
+            &lt;div class="price-box"&gt;
+                &lt;span>Braided Trunk Patto Plant&lt;/span&gt;
+                &lt;span&gt;&lt;del&gt;$530&lt;/del&gt; $129&lt;/span&gt;
+                &lt;span class="color-yellow"&gt;
+                    &lt;i class="fa fa-star" aria-hidden="true">&lt;/i&gt;
+                    &lt;i class="fa fa-star" aria-hidden="true">&lt;/i&gt;
+                    &lt;i class="fa fa-star" aria-hidden="true">&lt;/i&gt;
+                    &lt;i class="fa fa-star" aria-hidden="true">&lt;/i&gt;
+                    &lt;i class="fa fa-star-half-o" aria-hidden="true"&gt;&lt;/i&gt;
+                &lt;/span&gt;
+                &lt;div class="link"&gt;
+                    &lt;a href="#" class="custom-btn">Add To Card&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;a href="#" class="status-btn font-Montserrat color-white text-uppercase"&gt;Sale&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<br>
+
+<h6 id="before">How to change Before After Image/Content?</h6>
+<ul class="folder-struc">
+    <li class="file page">bonosai-html/home-3.html</li>
+</ul>
+
+<pre class="code-box">
+&lt;div class="col-md-7"&gt;
+    &lt;div id="container" class="welcome-img"&gt;
+        &lt;div class="mm-before-img"&gt;
+            &lt;img alt="before" src="images/home-4/feature-project/1.jpg" width="700" height="410" alt="Welcome Image"&gt;
+        &lt;/div&gt;
+        &lt;div class="mm-after-img"&gt;
+            &lt;img alt="after" src="images/home-4/feature-project/2.jpg" width="700" height="410" alt="Welcome Image"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;<!-- /.col-md-7 -->
+</pre>
+
+<br>
+<pre class="code-box">
+jQuery(document).ready(function($) {
+    // beforeAfter
+    $('#container').beforeAfter();
+});
+</pre>
+<br>
+
+<h6 id="project">How to Customize All Owl Carosel?</h6>
+<p>You can change item number using this js function</p>
+<ul class="folder-struc">
+    <li class="file page">assets/js/main.js</li>
+</ul>
+<hr>
+<pre class="code-box">
+$('.mm-our-project .owl-carousel').owlCarousel({
+  loop:true, // loop is true up to 1199px screen.
+  nav:false, // is true across all sizes
+  margin:0, // margin 10px till 960 breakpoint
+  autoplay: true,
+  responsiveClass:true, // Optional helper class. Add 'owl-reponsive-' + 'breakpoint' class to main element.
+  responsive:{
+    0:{
+      items:1 // In this configuration 1 is enabled from 0px up to 479px screen size 
+    },
+    1200:{
+      items:5,
+      loop:false,
+      margin: 0,
+    },
+    991:{
+      items:3,
+      loop:false,
+      margin: 0,
+    },
+    640:{
+      items:2,
+      loop:false,
+      margin: 0,
+    }
+  }
+}); 
+</pre>
+<br>
+
+<h6 id="filter">How to Customize All Isotop And Mesonry?</h6>
+<p>You can change item number, item size, item width and item size using this js function</p>
+<hr>
+<pre class="code-box">
+    jQuery(window).on("load resize",function(e){
+      var $container = $('#mmproductItems .isotope'),
+      colWidth = function () {
+        var w = $container.width(), 
+        columnNum = 1,
+        columnWidth = 0;
+      //Select what will be your porjects columns according to container widht
+      if (w > 768)     { columnNum  = 3; }  
+      else if (w > 480) { columnNum  = 2; }
+      columnWidth = Math.floor(w/columnNum);
+
+      //Default item width and height
+      $container.find('.item').each(function() {
+        var $item = $(this), 
+        width = columnWidth,
+        height = columnWidth*0.71;
+        $item.css({ width: width, height: height });
+      }); 
+
+      //2x height item width and height
+      $container.find('.height2').each(function() {
+        var $item = $(this), 
+        width = columnWidth,
+        height = columnWidth*2*0.71;
+        $item.css({ width: width, height: height });
+      });  
+      return columnWidth;
+      },
+      isotope = function () {
+        $container.isotope({
+          resizable: true,
+          itemSelector: '.item',
+          masonry: {
+            columnWidth: colWidth(),
+            gutterWidth: 10
+          }
+        });
+      };
+      isotope(); 
+
+      // bind filter button click
+      $('.isotope-filters').on( 'click', 'button', function() {
+        var filterValue = $( this ).attr('data-filter');
+        $container.isotope({ filter: filterValue });
+      });
+
+      // change active class on buttons
+      $('.isotope-filters').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function() {
+          $buttonGroup.find('.active').removeClass('active');
+          $( this ).addClass('active');
+        });
+      }); 
+
+    });
+</pre>	
+<br>
+
+
+<h6 id="map">How to Set Up Goolge Map?</h6>
+<p>You can change your location replace your own latitude and longitude number</p>
+<hr>
+<pre class="code-box">
+  function initialize() {
+    var locations = [
+      ['Md Abdul Malek', 41.926979,12.517385, 3],
+      ['MM Dhaka, Bangladesh', 41.914873,12.506486, 2],
+      ['107 North street, California +1234-567-890', 41.918574,12.507201, 1]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('googleMaps'), {
+      zoom: 14,
+      center: new google.maps.LatLng(41.923, 12.513), 
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+      }
+
+      function loadScript() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+        document.body.appendChild(script);
+      }
+
+  window.onload = loadScript;
+</pre>	
+
+        <hr class="space">
+
+        <!-- Credits -->
+
+        <p>Once again, thank you so much for purchasing this template. As I said at the beginning, I'd be glad to help you if you have any questions relating this template. No guarantees, but I'll do my best to assist. If you have any suggestions on how to improve our templates or documentation please share them!</p>
+
+        <hr class="space">
+
+        </div>
+
+
+    </div>
+    <!-- end div .container -->
+
+</body>
+
+</html>

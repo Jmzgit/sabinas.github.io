@@ -1,0 +1,144 @@
+body {
+   margin: 2em;
+}
+
+aside {
+   background: #1f8dd6;
+   padding: 5%;
+   /* same color as selected state on site menu */
+   /* Running same css in style2*/
+   border-radius: 2%;
+   color: #fff;
+   position: relative;
+}
+
+textarea {
+   width: 100%;
+}
+
+body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+   vertical-align: middle;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+   .row {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+   }
+}
+
+/* Style the header */
+.header {
+   background-color: #F9E79F;
+   padding: 20px;
+   text-align: center;
+   font-size: 35px;
+}
+
+/* Container for flexboxes */
+.row {
+   display: -webkit-flex;
+   display: flex;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+   padding: 20px;
+
+}
+
+/* Left and right column */
+.column.right {
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+}
+
+.column.left {
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+}
+
+/* Middle column */
+.column.big {
+   -webkit-flex: 2;
+   -ms-flex: 2;
+   flex: 2;
+}
+
+/* Style the footer */
+.footer {
+   background-color: #f1f1f1;
+   padding: 10px;
+   text-align: center;
+}
+
+.fa {
+   padding: 10px;
+   font-size: 20px;
+   width: 20px;
+   text-align: center;
+   text-decoration: none;
+   margin: 2px;
+   border-radius: 50%;
+}
+
+.fa-facebook {
+   background: #888888;
+   color: #ffffff;
+}
+
+.fa-yelp {
+   background: #888888;
+   color: #ffffff;
+}
+
+.fa-facebook:hover {
+   background: #3b5998
+}
+
+.fa-yelp:hover {
+   background: #b30000;
+}
+
+
+.content-head {
+   font-weight: 400;
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+   margin: 2em 0 1em;
+}
+
+.is-center {
+   text-align: center;
+}
+
+.button-success {
+   color: white;
+   border-radius: 15px;
+   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+   background: #00b159;
+   /* this is a visual button effect */
+}
+
+.button-xlarge {
+   font-size: 110%;
+   vertical-align: middle;
+}
+
+#name, #email {
+   width: 90%;
+}
+
+#Phone {
+   width: 70%;
+}
+
+.honeypot-field {
+   display: none;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>File Upload</title>
+      <link href='https://fonts.googleapis.com/css?family=M PLUS 1p' rel='stylesheet'>
+      <link rel="stylesheet" href="style.css">
+
+      <style>
+         body {
+            font-family: 'M PLUS 1p';
+            font-size: 22px;
+            /* This to center body content:  */
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            min-height:45vh;
+         }
+      </style>
+
+      </head>
+      <body>
+      <p style="font-size:28px; text-align:center;color:black;">
+         <img src="icons8-upload-to-cloud-50.png">
+      </p>
+
+      <form action="fileUploadScript.php" align="center" method="post" enctype="multipart/form-data">
+
+      <input  type="file" name="the_file" id="fileToUpload"><br><br>
+
+      <input type="submit" name="submit" value="Start Upload">
+      </form>
+
+      <p style="text-align:center;color:black;font-size:22px">
+         <mark style="background:#FFFF66;">Max file size 6 MB</mark>
+      </p>
+
+      <p style="text-align:center;color:black;font-size:14px">[jpeg  ogg  jpg  html  php  png  pdf  csv  txt  xls  xlsx  ipynb  mp3  py]</p>
+
+   </body>
+</html>

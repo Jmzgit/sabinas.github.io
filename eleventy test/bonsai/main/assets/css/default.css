@@ -1,0 +1,121 @@
+
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'PT Serif', serif;
+font-family: 'handletterregular';
+font-family: 'Lato', sans-serif;
+*/
+
+/*Color*/
+.color-white {
+  color: #fff !important;
+}
+.color-black {
+  color: #272727;
+}
+.color-212121 {
+  color: #212121;
+}
+.brown {
+	color: #b18f6a;
+}
+
+/*Bg*/
+.dark-bg {
+   background-color: #f6f6f6;
+}
+.brown-bg {
+	background-color: #b18f6a;
+}
+/*Padding*/
+.no-padding {
+  padding: 0 !important;
+}
+.padding-right-zero {
+	padding-right: 0px;
+}
+.padding-left-zero {
+	padding-left: 0px;
+}
+.padding-left-15 {
+  padding-left: 15px;
+}
+p.margin-bottom-0 {
+	margin-bottom: 0;
+}
+.mm-absolute-img {
+    position: absolute;
+}
+.font-Montserrat {
+  font-family: 'Montserrat', sans-serif;  
+}
+a.more {
+   color: #b18f6a;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+.overlay {
+   background-color: rgba(0, 0, 0, .3);
+}
+.icon {
+   width: 25px;
+   height: 25px;
+   float: left;
+   display: inline-block;
+}
+.mm-small-box {
+	display: block;
+	overflow: hidden;
+}
+.bold {
+   font-weight: 700 !important;
+}
+.normal {
+   font-weight: 400 !important;
+}
+.colmd4 {
+   max-width: 370px;
+   margin: 0 auto 30px auto;
+}
+.colmd3 {
+   max-width: 272px;
+   margin: 0 auto 30px auto;
+}
+.after {
+  position: relative;
+}
+.after:after {
+  top: 0;
+  left: 0;
+  content: '';
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border: 1px solid #fff;
+}
+.border-dashed {
+  border: 1px dashed #ebebeb;
+}
+
+
+
+/*
+* 1 = Google Fonts Load
+* 2 = Fonts Face
+* 3 = Global Area
+* 4 = Home Page 1
+* 5 = Home Page 2
+* 6 = Home Page 3
+* 7 = Home Page 4
+* 8 = About Us Page
+* 9 = Service Page
+* 10 = Service Details 1 Page
+* 11 = Service Details 2 Page
+* 12 = Project Details Page
+* 13 = Construction Page
+* 14 = news Page
+* 15 = News Details Page
+* 16 = Grid portfolio Page
+* 17 = Contact us Page
+* 18 = 18 404 Page
+*/

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Using the DOM for document.Write</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+const myString = " List of names Sandra Martin watermelon luis Monday y tambien que sea Jueves"
+
+let myArray = myString.split(" ");
+
+
+  for (let i = 0 ; i < myArray.length ; i++){
+    if (myArray[i].length > 3)
+    { 
+     document.write(myArray[i])
+    }
+}
+
+</script>
+
+
+  </body>
+</html>

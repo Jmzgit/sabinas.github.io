@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Dune- Help file</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif:400italic' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fff;
+        background-color: #2B2D35;
+    }
+    
+    html {
+        width: 100%;
+        height: 100%;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0 0 35px;
+        text-transform: uppercase;
+        font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    
+    strong {
+        font-size: 17px;
+    }
+    
+    h5 {
+        text-align: left;
+        color: #f1e7c0;
+        margin-bottom: 5px;
+    }
+    
+    h6 {
+        text-transform: none !important;
+        font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
+    }
+    
+    section li {
+        list-style: none;
+        text-align: left;
+        padding-bottom: 15px;
+    }
+    
+    .txtfile {
+        background: #F8F8F8;
+        width: 100%;
+        color: #333;
+    }
+    
+    .simplemail {
+        background: #5F7A87;
+        width: 100%;
+        color: #F8F8F8;
+    }
+    
+    p {
+        margin: 0 0 25px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    
+    @media(min-width:767px) {
+        p {
+            margin: 0 0 35px;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+    }
+    
+    a {
+        color: #f1e7c0;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: none;
+        color: #45B29D;
+    }
+    
+    .light {
+        font-weight: 400;
+    }
+    
+    .navbar {
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+        text-transform: uppercase;
+        font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #2B2D35;
+    }
+    
+    .navbar-brand {
+        font-weight: 700;
+    }
+    
+    .navbar-brand:focus {
+        outline: 0;
+    }
+    
+    .navbar-custom a {
+        color: #fff;
+    }
+    
+    .navbar-custom .nav li a {
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+    }
+    
+    .navbar-custom .nav li a:hover,
+    .navbar-custom .nav li a:focus,
+    .navbar-custom .nav li.active {
+        outline: 0;
+        background-color: rgba(255, 255, 255, .2);
+    }
+    
+    .navbar-toggle {
+        padding: 4px 6px;
+        font-size: 16px;
+        color: #fff;
+    }
+    
+    .navbar-toggle:focus,
+    .navbar-toggle:active {
+        outline: 0;
+    }
+    
+    .dropdown-menu {
+        background-color: #2B2D35;
+    }
+    
+    .dropdown-menu li a {
+        color: #FFFFFF;
+    }
+    
+    @media(min-width:767px) {
+        .navbar {
+            padding: 20px 0;
+            border-bottom: 0;
+            letter-spacing: 1px;
+            background: 0 0;
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+        .top-nav-collapse {
+            padding: 0;
+            background-color: #2B2D35;
+        }
+        .navbar-custom.top-nav-collapse {
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+    }
+    
+    .intro {
+        display: table;
+        width: 100%;
+        height: auto;
+        padding: 100px 0;
+        text-align: center;
+        color: #fff;
+        background: url(http://www.noisacco.fr/latté-V1/grove-9999.jpg) no-repeat bottom center scroll;
+        background-color: #2B2D35;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+    
+    .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    
+    .brand-heading {
+        font-size: 40px;
+        margin-top: 30px;
+    }
+    
+    .intro-text {
+        font-size: 18px;
+    }
+    
+    @media(min-width:767px) {
+        .intro {
+            height: 100%;
+            padding: 0;
+        }
+        .brand-heading {
+            font-size: 100px;
+        }
+        .intro-text {
+            font-size: 25px;
+            font-weight: 300;
+            color: #f1e7c0;
+        }
+    }
+    
+    .btn-circle {
+        width: 70px;
+        height: 70px;
+        margin-top: 15px;
+        padding: 7px 16px;
+        border: 2px solid #fff;
+        border-radius: 35px;
+        font-size: 40px;
+        color: #fff;
+        background: 0 0;
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+    }
+    
+    .btn-circle:hover,
+    .btn-circle:focus {
+        outline: 0;
+        color: #fff;
+        background: rgba(255, 255, 255, .1);
+    }
+    
+    .btn-circle-2 {
+        width: 70px;
+        height: 70px;
+        margin-top: 15px;
+        padding: 2px 16px;
+        border: 2px solid #fff;
+        border-radius: 35px;
+        font-size: 40px;
+        color: #fff;
+        background: 0 0;
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+    }
+    
+    .btn-circle-2:hover,
+    .btn-circle-2:focus {
+        outline: 0;
+        color: #fff;
+        background: rgba(255, 255, 255, .1);
+    }
+    
+    .page-scroll .btn-circle i.animated {
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 1s;
+        -moz-transition-property: -moz-transform;
+        -moz-transition-duration: 1s;
+    }
+    
+    .page-scroll .btn-circle:hover i.animated {
+        -webkit-animation-name: pulse;
+        -moz-animation-name: pulse;
+        -webkit-animation-duration: 1.5s;
+        -moz-animation-duration: 1.5s;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+    }
+    
+    .page-scroll .btn-circle-2 i.animated {
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 1s;
+        -moz-transition-property: -moz-transform;
+        -moz-transition-duration: 1s;
+    }
+    
+    .page-scroll .btn-circle-2:hover i.animated {
+        -webkit-animation-name: pulse;
+        -moz-animation-name: pulse;
+        -webkit-animation-duration: 1.5s;
+        -moz-animation-duration: 1.5s;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+    }
+    
+    @-webkit-keyframes pulse {
+        0 {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        50% {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+    
+    @-moz-keyframes pulse {
+        0 {
+            -moz-transform: scale(1);
+            transform: scale(1);
+        }
+        50% {
+            -moz-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        100% {
+            -moz-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+    
+    .content-section {
+        padding-top: 100px;
+        border-bottom: 1px solid #F8F8F8;
+    }
+    
+    @media(min-width:767px) {
+        .content-section {
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        .download-section {
+            padding: 100px 0;
+        }
+        #map {
+            height: 400px;
+            margin-top: 250px;
+        }
+    }
+    
+    .btn {
+        text-transform: uppercase;
+        font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+    
+    .btn-default {
+        border: 1px solid #f1e7c0;
+        color: #f1e7c0;
+        background-color: transparent;
+    }
+    
+    .btn-default:hover,
+    .btn-default:focus {
+        border: 1px solid #f1e7c0;
+        outline: 0;
+        color: #2B2D35;
+        background-color: #f1e7c0;
+    }
+    
+    .btn-huge {
+        padding: 25px;
+        font-size: 26px;
+    }
+    
+    ::-moz-selection {
+        text-shadow: none;
+        background: #fcfcfc;
+        background: rgba(255, 255, 255, .2);
+    }
+    
+    ::selection {
+        text-shadow: none;
+        background: #fcfcfc;
+        background: rgba(255, 255, 255, .2);
+    }
+    
+    img::selection {
+        background: 0 0;
+    }
+    
+    img::-moz-selection {
+        background: 0 0;
+    }
+    
+    body {
+        webkit-tap-highlight-color: rgba(255, 255, 255, .2);
+    }
+    </style>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">
+                    Dune
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#slider">Slider</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#typejs">Type JS</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#navPos">navigation</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">HELP FILE</h1>
+                        <p class="intro-text">Thank you for purchasing Dune
+                            <br/>-A quality theme by LionCoders</p>
+                        <div class="page-scroll">
+                            <a href="#countdown" class="btn btn-circle">
+                                <i class="fa fa-angle-double-down animated"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="slider" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Slider</h2>
+                <ul>
+                    <li>1. Open the file "index2.html"</li>
+                    <li>2. Find the following code
+                        <pre><code>   
+                            &lt;div id="lionhero" class="owl-carousel owl-theme"&gt;
+                                ...
+                            &lt;div/&gt;
+                        </code></pre> this code holds the slider/carousel
+                    </li>
+                    <li>3. within the code above, there are divs with class name- 'item'. these divs hold codes for individual slides. Inside each div with 'item' class there is a div with class- 'slide one' / 'slide two' / 'slide three' etc. This class has the slide image set as background. </li>
+                    <li>4. to change the images go to 'style.css' file in css folder and find the following code-
+                        <pre><code>
+                            .slide.one {
+                                background: url(../images/slider/slide1.jpg);
+                            }
+
+                            .slide.two {
+                                background: url(../images/slider/slide2.jpg);
+                            }
+
+                            .slide.three {
+                                background: url(../images/slider/slide4.jpg);
+                            }
+                        </code></pre> now change the image refernce as you wish.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="typejs" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Animated Typed Text</h2>
+                <ul>
+                    <li>1. Open the file from creative folder "index.html" </li>
+                    <li>2. Find the following code
+                        <pre>
+                            <code>  
+                                &lt;span id="typed-strings"&gt;&lt;/span&gt; 
+                            </code>
+                        </pre> This is where the animated typed text appear.
+                    </li>
+                    <li>3. replace the words within double quotes with your desired word/words.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="navPos" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Navigation</h2>
+                <ul>
+                    <li>1. To edit navigation open the index file you want to make change to</li>
+                    <li>2.find the following code:
+                        <pre><code>
+&lt;ul id="menu"&gt;
+    &lt;li data-menuanchor="page1" class="active"&gt;&lt;a onclick="closeNav()" href="#page1"&gt;HOME&lt;/a&gt;&lt;/li&gt;
+    &lt;li data-menuanchor="page2"&gt;&lt;a onclick="closeNav()" href="#page2"&gt;PORTFOLIO&lt;/a&gt;&lt;/li&gt;
+    &lt;li data-menuanchor="page3"&gt;&lt;a onclick="closeNav()" href="#page3"&gt;ABOUT&lt;/a&gt;&lt;/li&gt;
+    &lt;li data-menuanchor="page4"&gt;&lt;a onclick="closeNav()" href="#page4"&gt;SERVICES&lt;/a&gt;&lt;/li&gt;
+    &lt;li data-menuanchor="page5"&gt;&lt;a onclick="closeNav()" href="#page5"&gt;PRICES&lt;/a&gt;&lt;/li&gt;
+    &lt;li data-menuanchor="page6"&gt;&lt;a onclick="closeNav()" href="#page6"&gt;BLOG&lt;/a&gt;&lt;/li&gt;
+    &lt;li data-menuanchor="page7"&gt;&lt;a onclick="closeNav()" href="#page7"&gt;CONACT&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                                </code></pre>
+                    </li>
+                    <li>3. You'll have to edit the section name within <code>&lt;a&gt; &lt;a/&gt;</code> tag and also put the associated section ID inside href="..." attribute of that anchor tag.</li>
+                    <li>4.find the following code on main.js file:
+                        <pre><code>
+$(document).ready(function() {
+
+    $('#pagepiling').pagepiling({
+        menu: '#menu',
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
+        navigation: {
+            'textColor': '#f2f2f2',
+            'bulletsColor': '#ccc',
+            'position': 'right',
+            'tooltips': ['CREATIVE AGENCY', 'PORTFOLIO', 'ABOUT', 'SERVICES', 'PRICES', 'BLOG', 'CONTACT']
+        }
+    });
+
+
+});
+                                </code></pre>
+                        <li>5. You'll have to edit the section name within <code>tooltips</code> tag.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>contact form <small>write your email</small></h2>
+                <ul>
+                    <li>1- Open <strong style="color:#0C9">form-process.php</strong> findable in php/<strong style="color:#0C9">form-process.php</strong></li>
+                    <li>2- On line 35, you will find:
+                        <pre><code>$to = 'hello@yourdomain.com';
+</code></pre></li>
+                    <li>3. So just replace "hello@yourdomain.com" with your email address</li>
+                </ul>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="download" class="content-section text-center">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>If you need any help, please feel free to contact us at: </h2>
+                <a href="mailto:hello@lion-coders.com" class="btn btn-default btn-lg" target="_blank">hello@lion-coders.com</a>
+                <br/>
+                <br/>
+                <br/>
+                <h5 style="text-align:center">We wish you all the best !</h5>
+                <div class="page-scroll">
+                    <a href="#page-top" class="btn btn-circle-2">
+                        <i class="fa fa-angle-double-up animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script>
+    //jQuery to collapse the navbar on scroll
+    $(window).scroll(function() {
+        if ($(".navbar").offset().top > 50) {
+            $(".navbar-fixed-top").addClass("top-nav-collapse");
+        } else {
+            $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        }
+    });
+    </script>
+    <script>
+    //jQuery for page scrolling feature - requires jQuery Easing plugin
+    $(function() {
+        $('.page-scroll a').bind('click', function(event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1500, 'easeInOutExpo');
+            event.preventDefault();
+        });
+    });
+    </script>
+</body>
+
+</html>

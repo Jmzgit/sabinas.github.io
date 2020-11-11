@@ -1,0 +1,37 @@
+form {
+   background: #1f8dd6;
+   /* same color as selected state on site menu */
+   /* Running same css in style2*/
+   border-radius: 2%;
+  
+   color: #fff;
+   display: none;
+   position: relative;
+}
+
+.column {
+   padding: 30px;
+}
+
+#formButton {
+   display: inline-flex;
+   margin-right: auto;
+   margin-left: auto;
+   color: white;
+   border-radius: 20px;
+   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+   background: #cc3300;   /* this is a visual button effect */
+   font-size: 3vh;
+   vertical-align: middle;
+   cursor: pointer;
+   position: relative;
+   transition: .5s ease;
+
+}
+
+#formButton:hover {
+   -webkit-transform: scale(1.05);   /*Grows in size like Angry Birds button*/
+   -moz-transform: scale(1.05);
+   -ms-transform: scale(1.05);
+   -o-transform: scale(1.05);
+}

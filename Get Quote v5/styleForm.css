@@ -1,0 +1,78 @@
+body {
+  margin: 2em;
+}
+
+/* form formatting */
+aside {
+  background: white;
+  padding: 5%;
+  /* same color as selected state on site menu */
+  /* Running same css in style2*/
+  border-radius: 2%;
+  color: black;
+  position: relative;
+  margin: 20px 40px;
+}
+
+/* This is the format from original overlay...I imported it to tweak ti */
+#popup {
+  max-width: 500px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 2px;
+  position: relative;
+  border-radius: 15px;
+}
+
+textarea {
+  width: 100%;
+}
+
+body {
+  font-family: Archivo Black, Helvetica, sans-serif;
+}
+
+button {
+  vertical-align: middle;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.content-head {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 2em 0 1em;
+}
+
+.is-center {
+  text-align: center;
+}
+
+/* this is a visual button effect */
+.button-success {
+  color: white;
+  border-radius: 15px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #d0451b;
+  width: 50%;
+}
+
+.button-xlarge {
+  font-size: 110%;
+  vertical-align: middle;
+}
+
+#name, #email, #Phone {
+  width: 70%;
+}
+
+.honeypot-field {
+  display: none;
+}

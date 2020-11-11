@@ -1,0 +1,51 @@
+<!-- adding google map to html-->
+<!DOCTYPE html>
+<html>
+<style>
+   .mapouter {
+      position: relative;
+      text-align: center;
+      height: 500px;
+      width: 600px;
+   }
+   .gmap_canvas {
+      overflow: hidden;
+      background: none!important;
+      height: 600px;
+      width: 800px;
+   }
+   iframe:focus {
+  outline: none;
+}
+
+iframe[seamless] {
+  display: block;
+}
+</style>
+
+
+<head> <h3>Html Inline frame embedded gmap_canvas</h3> </head>
+
+   <body>
+
+      <div class="mapouter">
+         <div class="gmap_canvas">
+
+<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1xcgBxL1be68WDzxsZcItr6g0M18foO2K" width="640" height="480" style="border:none;"></iframe>
+  <figcaption>Map.1 - Distances for Promise Arrival Time for Client Hub. Westen & Central Canadian Major Cities</figcaption>
+
+         </div>
+         <div class="gmap_canvas">
+
+         <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1hwTWNSGNsUXhTh7RnWVOEEAdmvbw3JVM" width="640" height="480"></iframe>
+           <figcaption>Map.2 - Location of Client's targets. West of San Francisco Bay</figcaption>
+
+         </div>
+
+      </div>
+
+   </body>
+
+
+
+</html>

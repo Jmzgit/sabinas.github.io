@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+body {
+  font-size: 120%;
+  background-color: #EEE8AA;
+  text-align: center;
+  color: black;
+  font-family: Arial , Helvetica, sans-serif;
+
+}
+.button {
+  background-color: #808000; /* Green */
+  border: none;
+  color: white
+  ;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 14px 2px;
+  cursor: pointer;
+}
+.button4 {border-radius: 12px;
+          padding: 12px 28px;}
+</style>
+</head>
+<body>
+
+<br><br>
+
+	<form method="get" action="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi" target="new">
+    Iniciar busqueda en <!--<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene">-->PubMed</a>: &nbsp;&nbsp;<br>
+    <input type="hidden" name="db" value="PubMed"><br>
+    <input name="term" placeholder="Search..." width="55" autofocus size="35" type="TEXT" value=""><br>
+    <input type="submit" class="button button4" value="Go"><br>
+  </form>
+<br><br>
+
+
+</p>
+<script language="JavaScript">
+  /**
+    * Disable right-click of mouse, F12 key, and save key combinations on page
+    * By Arthur Gareginyan (arthurgareginyan@gmail.com)
+    * For full source code, visit https://mycyberuniverse.com
+    */
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (event.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.event){
+        window.event.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
+</body>
+</html>

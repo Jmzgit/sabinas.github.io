@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Company Homepage</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="contact form example">
+</head>
+<body>
+
+
+   <!-- START HERE -->
+      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+         <!-- Style The Contact Form How Ever You Prefer -->
+         <link rel="stylesheet" href="style.css">
+
+<div class="header">
+  <h2>Header</h2>
+</div>
+
+<div class="row">
+
+  <div class="column big" style="background-color:#bbb;">Column</div>
+  <div class="column side" style="background-color:#ccc;">
+     <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+        action="https://script.google.com/macros/s/AKfycbyRbs3pRG0uOQsV2N1JXyIcIjztfPY4jxilNfC8IWBmQH2_aqM/exec">
+          <!-- change the form action to your script url -->
+<aside>
+          <div class="form-elements">
+            <fieldset class="pure-group">
+              <label for="name">Name: </label>
+              <input id="name" name="name" placeholder="First Name"
+              style="background-color:white;color:black" />
+
+              <label for="message" >Message: </label>
+              <textarea id="message" name="message" rows="10"
+              placeholder="Tell us what's on your mind..."
+              style="background-color:white;color:black" ></textarea>
+
+            </fieldset>
+
+            <fieldset class="pure-group">
+              <label for="email"><em>Your</em> Email Address:</label>
+              <input id="email" name="email" type="email" value=""
+              required placeholder="your.name@email.com"
+              style="background-color:white;color:black"/>
+            </fieldset>
+
+            <fieldset class="pure-group">
+              <label for="Phone">Phone number: </label>
+              <input id="Phone" name="Phone" placeholder="(604) 123-4567" style="background-color:white;color:black" />
+            </fieldset>
+
+            <fieldset class="pure-group honeypot-field">
+              <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+              <input id="honeypot" type="text" name="honeypot" value="" />
+            </fieldset>
+
+            <button class="button-success pure-button button-xlarge">Send</button>
+          </div>
+
+          <!-- Customise the Thankyou Message People See when they submit the form: -->
+          <div class="thankyou_message" style="display:none;">
+            <h2><em>Thanks</em> for contacting us!
+              We will get back to you soon!</h2>
+          </div>
+          </aside>
+        </form>
+
+
+          <!-- Submit the Form to Google Using "AJAX" -->
+          <script data-cfasync="false" src="form-submission-handler.js"></script>
+        <!-- END -->
+
+</div>
+
+
+
+</div>
+
+<div class="footer">
+  <p>Footer</p>
+</div>
+
+</body>
+</html>
