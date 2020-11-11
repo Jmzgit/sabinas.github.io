@@ -1,0 +1,72 @@
+body {
+  padding: 100px 0;
+  background: #1f1f1f;
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  text-align: center;
+}
+
+.logo {
+  display: inline-block;
+  position: relative;
+  font-size: 6vmin;
+}
+
+span {
+  position: relative;
+  display: block;
+  float: left;
+  width: 15vmin;
+  height: 15vmin;
+  border-top: 1vmin solid currentColor;
+  line-height: 15vmin;
+  text-align: center;
+  transition: all 0.1s;
+}
+span:before {
+  position: absolute;
+  top: -1vmin;
+  right: -1vmin;
+  display: block;
+  width: 1vmin;
+  height: 15vmin;
+  background: white;
+  content: '';
+  transition: all 0.3s;
+}
+span.is-active:before {
+  top: -2vmin;
+  height: 2vmin;
+}
+span.is-active:last-child:before {
+  height: 1vmin;
+  top: -1vmin;
+}
+
+span:nth-child(2) {
+  transform: translateY(15vmin);
+}
+span:nth-child(2).is-active {
+  transform: translateY(0);
+}
+
+span:nth-child(3) {
+  transform: translateY(30vmin);
+}
+span:nth-child(3).is-active {
+  transform: translateY(0);
+}
+
+span:nth-child(4) {
+  transform: translateY(45vmin);
+}
+span:nth-child(4).is-active {
+  transform: translateY(0);
+}
+
+span:nth-child(5) {
+  transform: translateY(60vmin);
+}
+span:nth-child(5).is-active {
+  transform: translateY(0);
+}
