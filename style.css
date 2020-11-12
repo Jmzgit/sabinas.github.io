@@ -17,16 +17,16 @@ body {
 .circle3,
 .circle4,
 .circle5 {
-   position: relative;
+   position: absolute;
    border: 5px solid #BBA279;
 }
 .circle1 {
    background: #BBA279;
    width: 8px;
    height: 8px;
-   margin: 0 51.5%;
+   margin: 0 51.3%;
    border-radius: 50%;
-   top: 24.7%;
+   top: 24.6%;
    position: absolute;
    animation: morph 3.8s infinite ease-in-out;
 }
